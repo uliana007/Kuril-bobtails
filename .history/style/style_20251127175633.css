@@ -1,0 +1,1088 @@
+/* Для текста в <h1> */
+h1.display-4 {
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+/* Мобильные стили заголовка */
+@media (max-width: 950px) {
+    h1.display-4 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Секция hero */
+.hero {
+    background-image: url('./image/Navbar-cat.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 750px;
+    position: relative;
+    text-align: center;
+}
+
+/* Наложенный слой */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.245);
+    z-index: 1;
+}
+
+/* Основной текст внутри hero */
+.hero .text-white {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Стили для секций */
+.hero-title,
+.hero-description,
+.hero-button,
+.hero-scroll {
+    position: relative;
+    margin: 0 auto;
+}
+
+.hero-description {
+    visibility: hidden;
+}
+
+
+/* Смещения для секций на десктопе */
+@media (min-width: 950px) {
+    .hero-title {
+        top: -85px; /* Смещение для заголовка */
+    }
+
+    .hero-description {
+        top: 120px; /* Смещение для описания */
+    }
+
+    .hero-button {
+        top: 100px; /* Смещение для кнопки */
+    }
+
+    .hero-scroll {
+        top: 120px; /* Смещение для иконки скролла */
+        display: block;
+        margin-top: -90px;
+    }
+}
+
+/* Мобильные стили */
+@media (max-width: 950px) {
+    .hero {
+        height: auto;
+        padding-top: 70px;
+    }
+
+    .hero .text-white {
+        max-width: 90%;
+        font-size: 16px;
+        line-height: 1.5;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        top: 80px; /* Смещение заголовка для мобильных */
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        top: 80px; /* Смещение описания для мобильных */
+    }
+
+    .hero-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+        top: 60px; /* Смещение кнопки для мобильных */
+    }
+
+    .hero-scroll {
+        top: 0px; /* Смещение иконки скролла для мобильных */
+        display: block;
+
+    }
+}
+
+/* Стили иконки скролла */
+.small-scroll {
+    width: 70px;
+    height: 70px;
+    animation: scrollAnimation 1s ease-in-out infinite;
+    display: inline-block;
+}
+
+/* Анимация для иконки скролла */
+@keyframes scrollAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* Стрелка прокрутки */
+.scroll-down {
+    font-size: 50px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    
+}
+
+
+
+/* Полупрозрачный навбар для десктопной версии */
+.navbar {
+    background-color: rgba(1, 52, 1, 0.8) !important;
+    height: 70px;
+    padding: 20px 0;
+    font-weight: 400;
+}
+
+/* Увеличиваем отступы слева и справа для текста в меню */
+.navbar-nav .nav-link {
+    font-size: 16px;
+    color: white !important;
+    padding: 50px 30px;
+}
+@media (min-width: 950px) {
+    .navbar-nav {
+        margin-left: 150px; /* Увеличьте значение по вашему усмотрению */
+    }
+}
+
+/* Увеличиваем промежуток между номером телефона и соц сетями */
+.d-flex {
+    gap: 30px;
+}
+
+/* Для номера телефона */
+.phone-number {
+    font-size: 25px;
+    font-weight: 600;
+    color: white !important;
+    text-align: center;
+}
+
+/* Убираем серую рамку и фон в меню-бургере */
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+}
+
+/* Убираем рамку и тень при фокусе на кнопке-бургере */
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+@media (max-width: 950px) {
+    /* Настройка верхней полосы навбара (чёрный фон) */
+    .navbar {
+        background-color: #1f1f1fe6 !important;
+    }
+
+    /* Настройка секции с ссылками (полностью зеленый фон) */
+    .navbar-collapse {
+        background-color: #023202 !important;
+        width: 100% !important;
+        position: absolute;
+        top: 70px; /* Смещение меню под navbar */
+        left: 0;
+        height: 55vh; /* Полная высота экрана */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Смещаем ссылки наверх */
+        text-align: center;
+        opacity: 0; /* Начальное состояние */
+        visibility: hidden; /* Скрываем меню */
+        transform: translateY(-20px); /* Начальная позиция (выше на 20 пикселей) */
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Анимация */
+    }
+
+
+    .navbar-collapse.show {
+        opacity: 1; /* Прозрачность при открытии */
+        visibility: visible; /* Показываем меню */
+        transform: translateY(0); /* Сбрасываем позицию */
+    }
+
+    /* Гиперссылки в меню */
+    .navbar-nav .nav-link {
+        font-size: 16px;
+        color: white !important;
+        padding: 10px 0; /* Убираем лишние отступы */
+        width: 100%; /* Растягиваем элементы на всю ширину */
+        text-align: center; /* Выравнивание текста */
+        font-weight: 400; /* Уменьшаем жирность текста */
+    }
+
+    /* Настройка номера телефона и иконок соцсетей */
+    .d-flex {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Отступы для соц. иконок */
+    .social-icons {
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-icons img {
+        width: 35px; /* Увеличиваем размер иконок */
+        height: 35px;
+    }
+
+    .phone-number {
+        margin-top: 20px; /* Отступ сверху */
+        padding-top: 10px;
+    }
+
+    /* Центрирование содержимого меню на мобильных устройствах */
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрирование по горизонтали */
+        justify-content: flex-start; /* Смещение элементов наверх */
+        width: 100%;
+        padding-top: 20px; /* Добавляем отступ сверху для элементов меню */
+    }
+}@media (min-width: 500px) and (max-height: 500px) {
+    .navbar-collapse {
+        background-color: #023202 !important;
+        width: 100% !important;
+        position: fixed; /* Меняем на fixed, чтобы меню было фиксировано */
+        top: 70px;
+        left: 0;
+        height: 55vh; /* Задаем высоту 55vh */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; 
+        text-align: center;
+        opacity: 0; 
+        visibility: hidden; 
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    }
+
+    .navbar-collapse.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: row; /* Горизонтальное расположение */
+        justify-content: space-around; /* Равномерное распределение */
+        align-items: center;
+        gap: 5px; /* Горизонтальный отступ между ссылками */
+        padding: 10px 20px; /* Отступы внутри меню */
+        width: 100%;
+    }
+
+    /* Для телефона и иконок */
+    .phone-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px; /* Отступ между телефоном и иконками */
+        margin-top: 10px; /* Отступ от ссылок */
+        margin-top: -20px; /* Поднимаем выше на 10px */
+    }
+
+    /* Социальные иконки */
+    .social-icons {
+        display: flex;
+        gap: 10px; /* Отступы между иконками */
+        align-items: center; /* Центрируем иконки по вертикали */
+    }
+
+    .social-icons img {
+        width: 30px; /* Размер иконок */
+        height: 30px;
+    }
+
+    /* Телефон */
+    .phone-number {
+        font-size: 20px;
+        font-weight: 600;
+        color: white !important;
+        display: flex; /* Чтобы обеспечить флекс-контейнер для центрирования */
+        align-items: center; /* Вертикальное центрирование текста */
+    }
+}
+
+@media (max-width: 320px) and (max-height: 568px) {
+
+    /* Корректировка размеров иконок */
+    .social-icons img {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Корректировка шрифта телефона */
+    .phone-number {
+        font-size: 14px;
+    }
+
+    /* Поднимаем ссылки на страницы выше */
+    .navbar-nav {
+        padding-top: 10px; /* Уменьшаем отступ сверху */
+    }
+
+    .navbar-nav .nav-link {
+        padding-top: 5px; /* Уменьшаем отступы между ссылками */
+        padding-bottom: 5px;
+        font-size: 14px; /* Опционально: уменьшаем размер шрифта для ссылок */
+    }
+}
+
+
+/* Добавление отступа между элементами в Hero */
+.hero .display-4, .hero .lead, .hero .btn {
+    margin-bottom: 50px;
+}
+
+.description {
+    font-size: 1.2em; /* Увеличенный размер текста */
+    line-height: 1.6; /* Увеличенный межстрочный интервал */
+    color: #000000; /* Белый цвет текста для хорошей читаемости на темном фоне */
+    max-width: 600px; /* Ограниченная ширина для улучшения восприятия */
+    margin: 0 auto; /* Центрирование текста */
+}
+
+.highlighted {
+    font-weight: bold; /* Жирный шрифт для выделения */
+    font-size: 1.4em; /* Еще больший размер шрифта */
+    color: #000000; /* Цвет, чтобы сделать текст акцентным */
+}
+
+.animated-icon {
+    display: block;
+    margin: 10px auto; /* Центрирование и отступ */
+}
+
+
+/* Для кнопки "Купить котят" */
+.btn-warning {
+    background-color: #ff623b; /* Цвет фона */
+    border-color: #ff623b63; /* Цвет рамки */
+    color: #ffffff; /* Цвет текста */
+    padding: 15px 40px; /* Увеличенные отступы */
+    font-size: 16px; /* Увеличенный размер шрифта */
+    font-weight: bold; /* Жирность текста */
+    border-radius: 10px; /* Скругление углов */
+    text-transform: uppercase; /* Заглавные буквы */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавная анимация */
+    white-space: nowrap; /* Запрет на перенос текста */
+    width: auto; /* Авто ширина */
+    max-width: 250px; /* Максимальная ширина для кнопки */
+}
+
+/* Мобильные стили */
+@media (max-width: 950px) {
+    .btn-warning {
+        padding: 15px 20px; /* Уменьшаем отступы для мобильных */
+        font-size: 14px; /* Уменьшаем размер шрифта на мобильных */
+        width: 100%; /* Кнопка занимает 100% ширины контейнера */
+        max-width: none; /* Убираем максимальную ширину */
+    }
+}
+
+/* Эффект при наведении на кнопку */
+.btn-warning:hover {
+    background-color: #e04e3e; /* Темнее цвет фона при наведении */
+    color: white; /* Цвет текста */
+    border-color: #ff623b; /* Цвет рамки */
+    transform: scale(1.1); /* Увеличение кнопки при наведении */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Тень при наведении */
+}
+
+
+
+
+
+/* Стиль для бегущей строки */
+.marquee-container {
+    background-color: #ff7000; /* Цвет фона */
+    color: #fff0d7; /* Цвет текста */
+    padding: 14px 0; /* Отступы */
+    overflow: hidden; /* Скрываем текст, выходящий за пределы контейнера */
+    white-space: nowrap; /* Запрещаем перенос строк */
+    position: relative; /* Для абсолютного позиционирования бегущей строки */
+    height: 65px; /* Высота контейнера */
+}
+
+/* Бегущая строка */
+.marquee {
+    display: inline-flex; /* Используем inline-flex для анимации */
+    animation: marquee 20s linear infinite; /* Устанавливаем длительность анимации */
+    position: absolute; /* Чтобы избежать пробелов */
+}
+
+/* Элементы бегущей строки */
+.marquee-item {
+    display: inline-flex; /* Для отображения элементов в одном ряду */
+    align-items: center; /* Центрируем по вертикали */
+    margin-right: 10px; /* Отступ между иконкой и текстом */
+    font-size: 22px; /* Увеличенный размер текста */
+}
+
+/* Иконка */
+.marquee-icon {
+    width: 25px; /* Ширина иконки */
+    height: 18px; /* Высота иконки */
+    margin-right: 5px; /* Отступ между иконкой и текстом */
+}
+
+/* Определяем анимацию для бегущей строки */
+@keyframes marquee {
+    0% {
+        transform: translateX(0); /* Начальная позиция */
+    }
+    100% {
+        transform: translateX(-50%); /* Двигаем текст на 50% ширины */
+    }
+}
+/* Адаптация для мобильных устройств */
+@media (max-width: 950px) {
+    .marquee-container {
+        padding: 10px 0; /* Уменьшаем отступы */
+        height: 50px; /* Уменьшаем высоту контейнера */
+    }
+    .marquee-item {
+        font-size: 18px; /* Уменьшаем размер текста */
+        margin-right: 8px; /* Уменьшаем отступы между элементами */
+    }
+    .marquee-icon {
+        width: 20px; /* Уменьшаем размер иконки */
+        height: 14px; /* Уменьшаем высоту иконки */
+    }
+}
+
+
+
+
+/* Общие стили для секции с котятами */
+.kittens-section {
+    background-color: #b1f0a4;
+    padding: 50px 0;
+}
+
+.kittens-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Карточка котенка */
+.kitten-card {
+    display: flex;
+    background-color: #ffffff00;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0);
+    border-radius: 8px;
+    padding: 0px;
+    margin-bottom: 30px; /* Уменьшим этот отступ в мобильной версии */
+    align-items: center; /* Вертикальное выравнивание */
+    width: 100%; /* Единый размер карточки */
+    height: 100%; /* Единый размер карточки */
+    border-radius: 20px; /* Закругленные углы */
+}
+
+/* Изображение котенка */
+.kitten-image {
+    max-width: 100%; /* Максимальная ширина изображения */
+    margin-right: 20px; /* Отступ справа для первой и третьей карточек */
+}
+
+.kitten-image img {
+    width: 700px;
+    height: 450px;
+    border-radius: 20px;
+}
+
+/* Информация о котенке */
+.kitten-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    margin-left: 25px; /* Подвинуть текст ближе к изображению */
+}
+
+.kitten-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.kitten-price {
+    font-size: 1.5rem; /* Размер остается прежним */
+    margin-bottom: 15px;
+}
+
+.buy-button {
+    background-color: #ff5429;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500; /* Установлено умеренное начертание текста */
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    width: 180px; /* Убираем фиксированную ширину */
+    height: 50px;
+    /* отсутствие подчерка ссылки */
+    text-decoration: none; 
+    /* Центрирование текста */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap; /* Запрет на перенос текста для кнопки "Купить котят" */
+}
+
+
+
+.buy-button:hover {
+    background-color: #a7371bdf; /* Цвет при наведении */
+}
+
+.buy-button:active {
+    background-color: #8f3015; /* Затемненный цвет при нажатии */
+    transform: scale(0.95); /* Немного уменьшаем размер для эффекта нажатия */
+}
+
+.kitten-description {
+    font-size: 1.5rem; /* Размер остается прежним */
+    font-weight: 300;  /* Тонкий шрифт для описания */
+    margin-bottom: 15px;
+}
+/* Адаптивность для мобильных устройств */
+@media (max-width: 950px) {
+    .kitten-card {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        height: auto;
+        margin-bottom: -60px; /* Уменьшаем отступ между карточками */
+    }
+
+    .kitten-image img {
+        width: 105%; /* Уменьшаем изображение до 80% на мобильных устройствах */
+        height: auto;
+        order: 0;  /* Изображение остается на первом месте */
+    }
+
+    .kitten-info {
+        align-items: flex-start;
+        margin-left: 0;
+        order: 1;  /* Этот стиль смещает информацию ниже изображения */
+    }
+
+    .kitten-title {
+        font-size: 1.7rem;
+    }
+
+    .kitten-price {
+        font-size: 1.5rem;
+    }
+
+    .buy-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .kitten-description {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+/* Стили для секции соцсетей */
+.socials-section {
+    background-color: #b1f0a4;
+    padding: 50px 0;
+}
+
+.socials-section h2 {
+    font-size: 2.3rem; /* Немного увеличиваем размер заголовка */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socials-section h2 span {
+    margin-right: 10px; /* Пробел между "в" и "Соцсетях" */
+}
+
+.socials-section p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* Стили для описания */
+.description-text {
+    font-weight: 300;  /* Тонкий шрифт */
+    margin-bottom: 15px;
+}
+
+/* Стили для галереи изображений */
+.image-gallery {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    gap: 20px; /* Небольшой отступ между картинками */
+    justify-content: center;
+}
+
+.image-left {
+    flex-basis: 600px; /* Ширина для самой большой картинки */
+}
+
+.large-image {
+    width: 590px;
+    height: 600px;
+    border-radius: 20px; /* Округленные края для большой картинки */
+}
+
+.image-right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 700px; /* Ширина для квадрата из картинок */
+}
+
+.small-image {
+    width: 295px;
+    height: 295px;
+    border-radius: 20px; /* Округленные края для маленьких картинок */
+}
+/* Адаптивность для мобильных устройств */
+@media (max-width: 950px) {
+    /* Заголовок */
+    .socials-section h2 {
+        font-size: 7vw; /* Адаптивный размер заголовка на основе ширины экрана */
+        text-align: center; /* Центрируем заголовок */
+        line-height: 1.2; /* Оптимизация межстрочного интервала */
+        margin: 0; /* Убираем отступы сверху и снизу */
+        word-wrap: break-word; /* Разрешаем перенос слов на новой строке при необходимости */
+        white-space: normal; /* Позволяем заголовку переноситься на новую строку */
+    }
+
+    .socials-section h2 span {
+        color: #ff5429; /* Красный цвет для второй части текста */
+    }
+
+    .socials-section p {
+        font-size: 1.2rem; /* Уменьшаем размер текста для описания */
+        margin-bottom: 20px; /* Уменьшаем отступ */
+    }
+
+    .description-text {
+        font-size: 1rem;  /* Уменьшаем шрифт описания */
+    }
+
+    /* Галерея изображений становится вертикальной */
+    .image-gallery {
+        flex-direction: column;
+        align-items: center; /* Центрируем все элементы по горизонтали */
+    }
+
+    /* Большая картинка */
+    .image-left {
+        flex-basis: 60%; /* Для мобильных устройств картинка занимает всю ширину */
+        margin-bottom: 15px; /* Отступ снизу */
+        display: flex;
+        justify-content: center; /* Центрируем первую картинку */
+        width: 60%;
+        height: 60%; /* Высота будет автоматически адаптироваться */
+    }
+
+    .image-left .large-image {
+        width: 120%; /* Ширина изображения */
+        height: 200px; /* Увеличиваем высоту изображения */
+        object-fit: cover; /* Сохраняем пропорции изображения */
+        border-radius: 15px; /* Округленные края */
+    }
+
+    /* Меньшие картинки */
+    .image-right {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Два столбца для изображений */
+        gap: 10px; /* Расстояние между картинками */
+        width: 90%;
+    }
+
+    .large-image,
+    .small-image {
+        width: 100%; /* Все картинки занимают 100% ширины контейнера */
+        height: 150px; /* Высота для всех изображений */
+        object-fit: cover; /* Сохраняем пропорции изображений */
+        border-radius: 15px; /* Округленные края */
+    }
+}
+
+
+
+
+/* Стили для секции преимуществ */
+.advantages-section {
+    background-color: #e8e8e8; /* Серый фон */
+    padding: 50px 0;
+}
+
+.advantages-section h2 {
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.advantages-section p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Сетка преимуществ */
+.advantages-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 0 10%;
+}
+
+/* Сетки преимуществ */
+.advantages-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 0 10%;
+}
+
+/* Карточки преимуществ */
+.advantage-item {
+    display: flex;
+    align-items: center; /* Центрируем содержимое карточки по высоте */
+    border-radius: 10px;
+    width: 30%; /* Ширина для каждой карточки */
+    text-align: left; /* Текст выравнивается по левому краю */
+    padding: 20px; /* Добавляем отступы внутри карточки */
+}
+
+/* Иконки в карточках */
+.advantage-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    flex-shrink: 0; /* Иконка сохраняет свои размеры */
+}
+
+/* Текст внутри карточек */
+.advantage-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрируем текст по высоте */
+    align-items: flex-start; /* Выравниваем по левому краю */
+    position: relative;
+    margin: 0; /* Убираем возможные отступы */
+}
+
+/* Заголовок в карточке */
+.advantage-text h3 {
+    font-size: 1.2rem;
+    margin: 0 0 10px 0; /* Отступ снизу для промежутка между заголовком и описанием */
+    color: black;
+}
+
+/* Описание в карточке */
+.advantage-text p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0; /* Убираем отступы */
+    position: relative;
+    text-align: left; /* Устанавливаем выравнивание текста по левому краю */
+}
+
+/* Первая строка описания */
+.advantage-text .line-1 {
+    display: inline-block;
+    position: relative;
+    left: var(--line-1-left, 0px); /* Используем переменную для сдвига первой строки */
+}
+
+/* Вторая строка описания */
+.advantage-text .line-2 {
+    display: inline-block;
+    position: relative;
+    left: var(--line-2-left, 0px); /* Используем переменную для сдвига второй строки */
+}
+
+
+
+/* Пространство внизу */
+.spacer {
+    height: 50px; /* Небольшое пространство под секцией */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 950px) {
+    .advantages-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .advantage-item {
+        width: 100%; /* Полная ширина на мобильных устройствах */
+        margin-bottom: 20px;
+    }
+}
+
+
+=== ФУТЕР ===
+        footer {
+            background-color: #000;
+            margin-top: 100px;
+        }
+        
+        .footer-top {
+            background: #ff823c;
+            padding: 60px 0 50px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        .footer-column h3 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .footer-column h4 {
+            font-size: 16px;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #000;
+        }
+        
+        .contacts i {
+            width: 24px;
+            margin-right: 10px;
+            color: #fff;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 50%;
+            font-size: 22px;
+            color: #fff;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #000;
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            background: #000;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 14px;
+            border-top: 1px solid #333;
+        }
+        
+        /* === АДАПТИВ === */
+        @media (max-width: 992px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .footer-column h3 {
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .footer-top {
+                padding: 50px 0 40px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+
+.slideshow {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    font-size: 24px;
+    color: rgba(128, 128, 128, 0.7); /* Полупрозрачный серый */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    color: rgba(128, 128, 128, 1); /* Полностью непрозрачный серый при наведении */
+}
+
+
+.slideshow {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    font-size: 24px;
+    color: rgba(128, 128, 128, 0.7); /* Полупрозрачный серый */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    color: rgba(128, 128, 128, 1); /* Полностью непрозрачный серый при наведении */
+}
+
+
+.icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px; /* Отступ между иконкой и текстом */
+    vertical-align: middle; /* Выравнивание иконки по центру текста */
+}
+
+.kitten-description {
+    display: flex;
+    align-items: center;
+}
+
+.kitten-price {
+    display: flex;
+    align-items: center;
+}
+
+.kitten-status{
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+.kitten-status .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.status-sold {
+    background-color: rgba(255, 1, 1, 0.46);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    margin-left: 10px; /* Сдвиг текста "Продано" левее */
+    display: inline-block;
+    text-indent: 5px; /* Интервал перед словом */
+}
+
+.status-available {
+    background-color: rgba(1, 110, 1, 0.63);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    margin-left: 10px; /* Сдвиг текста "Продано" левее */
+    display: inline-block;
+    text-indent: 5px; /* Интервал перед словом */
+}

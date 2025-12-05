@@ -1,0 +1,160 @@
+/* ====================== FOOTER ====================== */
+.site-footer {
+    margin-top: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.footer-top-strip {
+    height: 12px;
+    background: linear-gradient(to right, #ff823c 0%, #ff5e0a 100%);
+}
+
+.footer-bottom-strip {
+    height: 8px;
+    background: #ff823c;
+}
+
+/* Основной контейнер */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 20px 50px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+/* Левая часть — логотип */
+.footer-logo { margin-bottom: 20px; }
+.logo-text {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #ff823c;
+    text-transform: uppercase;
+}
+.footer-subtitle {
+    font-size: 16px;
+    opacity: 0.9;
+    margin: 8px 0;
+}
+.footer-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 12px 0 0;
+    line-height: 1.2;
+}
+
+/* Заголовки */
+.footer-heading {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ff823c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Отступ между "Контакты" и "Навигация" */
+.footer-nav-title {
+    margin-top: 40px; /* ← вот этот отступ ты просила */
+}
+
+/* Списки */
+.footer-contacts,
+.footer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-contacts li,
+.footer-nav li {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+.footer-contacts a,
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-contacts a:hover,
+.footer-nav a:hover {
+    color: #ff823c;
+}
+.footer-contacts i {
+    width: 20px;
+    color: #ff823c;
+    margin-right: 8px;
+}
+
+/* Копирайт и иконки соцсетей */
+.footer-copyright {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+.footer-made {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 25px;
+}
+
+/* Соцсети внизу справа */
+.footer-socials {
+    display: flex;
+    gap: 18px;
+    justify-content: flex-start;
+}
+.social-icon {
+    color: #fff;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+.social-icon:hover {
+    color: #ff823c;
+    transform: translateY(-3px);
+}
+
+/* ====================== АДАПТИВНОСТЬ ====================== */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    .footer-right {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+    .footer-socials {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 50px;
+    }
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        text-align: center;
+    }
+    .logo-text { font-size: 30px; }
+    .footer-title { font-size: 24px; }
+    .footer-nav-title { margin-top: 35px; }
+    .footer-socials { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .footer-container { padding: 50px 15px 40px; }
+    .logo-text { font-size: 26px; }
+    .social-icon { font-size: 22px; }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О питомнике ZHANNA VLADRU — Курильский бобтейл</title>
+    <meta name="description" content="Питомник курильских бобтейлов ZHANNA VLADRU — официально зарегистрирован в WCF, здоровые котята с документами, любовь и забота с 2020 года.">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Кастомные стили -->
+    <link rel="stylesheet" href="../style/benefits.css">
+    <link rel="icon" href="../image/icon/favicon-32x32.png" type="image/png">
+</head>
+<body>
+
+<!-- Навбар (оставляем как есть, но можно улучшить позже) -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: rgba(1,52,1,0.9); height: 70px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Kittens.html">Котята</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="benefits.html">О питомнике</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                </ul>
+                <div class="d-flex phone-social align-items-center gap-3">
+                    <span class="phone-number fw-bold">+7 916 336-57-17</span>
+                    <div class="social-icons d-flex gap-3">
+                        <a href="https://wa.me/+79163365717" target="_blank"><img src="../image/icon/whatsapp.png" alt="WhatsApp"></a>
+                        <a href="#" id="instagram-link"><img src="../image/icon/instagram.png" alt="Instagram"></a>
+                        <a href="mailto:GRAZHAVLA@MAIL.RU"><img src="../image/icon/email.png" alt="Email"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Бегущая строка -->
+<div class="marquee-container">
+    <div class="marquee">
+        <div class="marquee-content">
+            <span class="marquee-item"><img src="../image/icon/cat.png" class="marquee-icon"> ПОМЕТ 2024</span>
+            <span class="marquee-item"><img src="../image/icon/cat.png" class="marquee-icon"> ПОМЕТ 2024</span>
+            <span class="marquee-item"><img src="../image/icon/cat.png" class="marquee-icon"> ПОМЕТ 2024</span>
+            <span class="marquee-item"><img src="../image/icon/cat.png" class="marquee-icon"> ПОМЕТ 2024</span>
+            <span class="marquee-item"><img src="../image/icon/cat.png" class="marquee-icon"> ПОМЕТ 2024</span>
+        </div>
+        <div class="marquee-content">
+            <span class="marquee-item"><img src="../image/icon/cat.png" class="marquee-icon"> ПОМЕТ 2024</span>
+            <!-- дублируем для бесконечности -->
+        </div>
+    </div>
+</div>
+
+<main class="pt-5">
+    <!-- Заголовок -->
+    <section class="py-5 text-center bg-light">
+        <h1 class="display-4 fw-bold" style="color: #333;">О питомнике</h1>
+    </section>
+
+    <!-- Фото заводчицы + текст -->
+    <section class="breeder-section">
+        <div class="container">
+            <div class="breeder-photo-wrapper">
+                <img src="../image/new-image2025/breeder.jpeg" alt="Жанна — заводчица ZHANNA VLADRU" class="breeder-photo">
+            </div>
+            <div class="breeder-info">
+                <h2 class="breeder-name">Жанна Владру</h2>
+                <p class="breeder-title">Заводчица питомника ZHANNA VLADRU</p>
+                <p class="breeder-text">
+                    С любовью и заботой выращиваю курильских бобтейлов с 2020 года.<br>
+                    Все котята рождаются и растут в домашних условиях, окружённые теплом и лаской.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Официальная информация -->
+    <section class="cattery-info-section">
+        <div class="container text-center">
+            <h2 class="cattery-title">
+                Название питомника: <strong>ZHANNA VLADRU</strong>
+            </h2>
+            <p class="cattery-registration">
+                Официально зарегистрирован в WCF<br>
+                <strong>№46850-2024 (F)</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Сертификат -->
+    <section class="certificate-section py-5">
+        <div class="container text-center">
+            <div class="certificate-wrapper">
+                <img src="../image/sertification.jpg" alt="Сертификат WCF питомника ZHANNA VLADRU" class="certificate-img">
+            </div>
+            <p class="mt-4 text-muted">Официальный сертификат регистрации питомника в системе WCF</p>
+        </div>
+    </section>
+</main>
+
+<!-- Футер -->
+<div id="footer-placeholder"></div>
+
+<script>
+    // Умный Instagram
+    document.addEventListener('DOMContentLoaded', () => {
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        document.getElementById('instagram-link').href = isMobile 
+            ? "instagram://user?username=zhanna0358" 
+            : "https://www.instagram.com/zhanna0358";
+    });
+
+    // Подгрузка футера
+    fetch('../footer.html')
+        .then(r => r.ok ? r.text() : '<footer style="background:#000;color:#fff;padding:50px;text-align:center;">© 2025 ZHANNA VLADRU</footer>')
+        .then(html => document.getElementById('footer-placeholder').outerHTML = html);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

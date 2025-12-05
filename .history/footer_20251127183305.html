@@ -1,0 +1,64 @@
+<!-- footer.html — общий футер для всех страниц -->
+<footer class="site-footer">
+    <div class="footer-top-strip"></div>
+
+    <div class="footer-container">
+        <div class="footer-left">
+            <div class="footer-logo">
+                <span class="logo-text">ZHANNA VLADRU</span>
+            </div>
+            <p class="footer-subtitle">Питомник курильских бобтейлов</p>
+            <p class="footer-title">КУРИЛЬСКИЙ БОБТЕЙЛ</p>
+        </div>
+
+        <div class="footer-center">
+            <h3 class="footer-heading">Контакты</h3>
+            <ul class="footer-contacts">
+                <li><i class="fas fa-phone-alt"></i> <a href="tel:+79163365717">+7 (916) 336-57-17</a></li>
+                <li><i class="fas fa-envelope"></i> <a href="mailto:GRAZHAVLA@MAIL.RU">GRAZHAVLA@MAIL.RU</a></li>
+                <li><i class="fab fa-instagram"></i> <a href="https://instagram.com/zhanna0358" target="_blank">@zhanna0358</a></li>
+            </ul>
+
+            <h3 class="footer-heading footer-nav-title">Навигация</h3>
+            <ul class="footer-nav">
+                <li><a href="/index.html">Главная</a></li>
+                <li><a href="/pages/Kittens.html">Котята</a></li>
+                <li><a href="/pages/benefits.html">О питомнике</a></li>
+                <li><a href="/pages/contacts.html">Контакты</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-right">
+            <p class="footer-copyright">
+                © 2024–2025 ZHANNA VLADRU<br>
+                Все права защищены
+            </p>
+            <p class="footer-made">Сайт создан в 2024 году</p>
+
+            <div class="footer-socials">
+                <a href="https://wa.me/+79163365717" target="_blank" class="social-icon" aria-label="WhatsApp">
+                    <img src="/image/icon/whatsapp.png" alt="WhatsApp" class="footer-social-img">
+                </a>
+                <a href="#" id="instagram-footer-link" class="social-icon" aria-label="Instagram">
+                    <img src="/image/icon/instagram.png" alt="Instagram" class="footer-social-img">
+                </a>
+                <a href="mailto:GRAZHAVLA@MAIL.RU" class="social-icon" aria-label="Email">
+                    <img src="/image/icon/email.png" alt="Email" class="footer-social-img">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom-strip"></div>
+</footer>
+
+<!-- Умная ссылка Instagram: приложение на телефоне, сайт на компьютере -->
+<script>
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const link = document.getElementById('instagram-footer-link');
+    if (link) {
+        link.href = isMobile 
+            ? "instagram://user?username=zhanna0358" 
+            : "https://www.instagram.com/zhanna0358";
+    }
+</script>

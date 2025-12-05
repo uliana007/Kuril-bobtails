@@ -1,0 +1,277 @@
+/* Для текста в <h1> */
+h1.display-4 {
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+/* Навбар */
+.navbar {
+    background-color: rgba(1, 52, 1, 0.8) !important;
+    height: 70px;
+    padding: 20px 0;
+    font-weight: 400;
+}
+
+.navbar-nav .nav-link {
+    font-size: 16px;
+    color: white !important;
+    padding: 50px 30px;
+}
+
+@media (min-width: 950px) {
+    .navbar-nav { margin-left: 150px; }
+}
+
+/* Контакты */
+.d-flex { gap: 30px; }
+.phone-number {
+    font-size: 25px;
+    font-weight: 600;
+    color: white !important;
+    text-align: center;
+}
+.navbar-toggler { border: none; background-color: transparent; }
+.navbar-toggler:focus { outline: none; box-shadow: none; }
+
+/* Мобильные правила навбара (с адаптацией) */
+@media (max-width: 950px) {
+    .navbar { background-color: #1f1f1fe6 !important; }
+    .navbar-collapse {
+        background-color: #023202 !important;
+        width: 100% !important;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        height: 55vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    }
+    .navbar-collapse.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .navbar-nav .nav-link {
+        font-size: 16px; color: white !important; padding: 10px 0; width: 100%; text-align: center; font-weight: 400;
+    }
+    .d-flex { flex-direction: column; justify-content: center; align-items: center; gap: 10px; }
+    .social-icons { display:flex; gap:15px; }
+    .social-icons img { width:35px; height:35px; }
+    .phone-number { margin-top:20px; padding-top:10px; }
+    .navbar-nav { display:flex; flex-direction:column; align-items:center; justify-content:flex-start; width:100%; padding-top:20px; }
+}
+
+/* Остальные media правила (сохранил как было) */
+@media (min-width: 500px) and (max-height: 500px) {
+    .navbar-collapse { position: fixed; top: 70px; left: 0; height: 55vh; }
+    .navbar-nav { display:flex; flex-direction:row; justify-content:space-around; gap:5px; padding:10px 20px; width:100%; }
+    .phone-social { display:flex; justify-content:center; align-items:center; gap:15px; margin-top:-20px; }
+    .social-icons img { width:30px; height:30px; }
+    .phone-number { font-size:20px; font-weight:600; display:flex; align-items:center; }
+}
+
+@media (max-width: 320px) and (max-height: 480px) {
+    .social-icons img { width:28px; height:28px; }
+    .phone-number { font-size:14px; }
+    .navbar-nav { padding-top:10px; }
+    .navbar-nav .nav-link { padding-top:5px; padding-bottom:5px; font-size:14px; }
+}
+
+/* Hero spacing */
+.hero .display-4, .hero .lead, .hero .btn { margin-bottom: 50px; }
+
+/* Marquee */
+.marquee-container {
+    background-color: #ff7000;
+    color: #fff0d7;
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    height: 65px;
+    margin-top: 70px !important;
+}
+.marquee { display:inline-flex; animation: marquee 20s linear infinite; position:absolute; }
+.marquee-item { display:inline-flex; align-items:center; margin-right:10px; font-size:22px; }
+.marquee-icon { width:25px; height:18px; margin-right:5px; }
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Pomet image */
+.pomet-image { width:70vw; height:70vw; border-radius:20px; object-fit:cover; margin:0 auto !important; }
+
+/* Mama/Papa underline */
+.mama-underline, .papa-underline { display:inline-block; position:relative; font-weight:bold; font-size:1.5rem; }
+.mama-underline::after, .papa-underline::after { content:''; position:absolute; left:0; bottom:-5px; width:100%; height:2px; background:#000; transform:scaleX(0); transform-origin:bottom right; transition:transform 0.3s ease-out; }
+
+/* Kittens section and cards */
+.kittens-section { background-color:#b1f0a4; padding:50px 0; }
+.kittens-section h2 { font-size:2.5rem; margin-bottom:30px; }
+
+/* Card */
+.kitten-card {
+    display:flex;
+    background-color: transparent;
+    border-radius:20px;
+    padding:0;
+    margin-bottom:30px;
+    align-items:center;
+    width:100%;
+    height:auto;
+}
+.kitten-image { max-width:100%; margin-right:20px; }
+.kitten-image img { width:700px; height:450px; border-radius:20px; object-fit:cover; display:block; }
+.kitten-info { display:flex; flex-direction:column; justify-content:center; flex-grow:1; margin-left:25px; }
+.kitten-title { font-size:2rem; margin-bottom:10px; }
+.kitten-price { font-size:1.5rem; margin-bottom:15px; display:flex; align-items:center; }
+.buy-button {
+    background-color:#ff5429; color:#fff; border:none; padding:10px 20px; font-size:1rem; font-weight:500; cursor:pointer;
+    border-radius:8px; margin-bottom:15px; width:180px; height:50px; text-decoration:none; display:flex; justify-content:center; align-items:center;
+}
+.buy-button:hover { background-color:#a7371bdf; }
+.buy-button:active { background-color:#8f3015; transform:scale(0.95); }
+.kitten-description { font-size:1.5rem; font-weight:300; margin-bottom:15px; display:flex; align-items:center; }
+
+/* Status badges */
+.kitten-status .icon { width:20px; height:20px; margin-right:8px; }
+.status-sold { background: rgba(255,1,1,0.46); color:white; padding:3px 8px; border-radius:12px; margin-left:10px; display:inline-block; text-indent:5px; }
+.status-available { background: rgba(1,110,1,0.63); color:white; padding:3px 8px; border-radius:12px; margin-left:10px; display:inline-block; text-indent:5px; }
+
+/* Gallery section */
+.kittens-gallery-section { padding:80px 0; background:#f9f9f9; }
+
+/* --- СЛАЙДЕРЫ — исправленные стили --- */
+
+/* Контейнер слайдера: делаем адаптивным и убираем фиксированные ширины в %/px, используем max-width */
+.kitten-slider {
+    position: relative;
+    width: 100%;
+    max-width: 700px; /* ограничение по ширине */
+    height: 450px;
+    overflow: hidden;
+    border-radius: 20px;
+    flex-shrink: 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Сама лента слайдов — не задаём жесткую ширину в процентах,
+   каждый .slide занимает 100% контейнера благодаря flex: 0 0 100% */
+.kitten-slider .slides {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.kitten-slider .slide {
+    min-width: 100%;
+    height: 100%;
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kitten-slider .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+
+/* Стрелки */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+.slider-arrow.prev { left: 15px; }
+.slider-arrow.next { right: 15px; }
+.slider-arrow:hover { background: rgba(0,0,0,0.8); }
+
+.slider-arrow::after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border: solid white;
+    border-width: 3px 3px 0 0;
+    display:block;
+}
+.slider-arrow.prev::after  { transform: rotate(-135deg); margin-left: 4px; }
+.slider-arrow.next::after  { transform: rotate(45deg); margin-left: -4px; }
+
+/* Точки */
+.slider-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 12;
+}
+.slider-dots .dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+.slider-dots .dot.active,
+.slider-dots .dot:hover {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Адаптив */
+@media (max-width: 992px) {
+    .kitten-slider { height: 380px; }
+}
+
+@media (max-width: 768px) {
+    .kitten-card .row { flex-direction: column; }
+    .kitten-slider { height: 300px; }
+    .order-lg-1, .order-lg-2 { order: initial !important; }
+}
+
+/* Подвал */
+.footer { width:100%; }
+.footer-orange { background:#ff823c; height:80px; width:100%; }
+.footer-black { background:black; height:60px; width:100%; }
+
+/* Немного общих адаптивных правил для карточек */
+@media (max-width: 950px) {
+    .kitten-card {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .kitten-image img {
+        width: 100%;
+        height: auto;
+        order: 0;
+    }
+    .kitten-info { align-items: flex-start; margin-left: 0; order: 1; }
+    .kitten-title { font-size: 1.7rem; }
+    .kitten-price { font-size: 1.5rem; }
+    .buy-button { font-size: 0.9rem; padding: 8px 16px; width:auto; }
+    .kitten-description { font-size: 1rem; }
+}

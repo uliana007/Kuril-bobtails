@@ -1,0 +1,450 @@
+/* Для текста в <h1> */
+h1.display-4 {
+    font-weight: 700;
+    font-size: 4rem; /* Увеличьте размер текста */
+}
+
+
+
+/* Полупрозрачный навбар для десктопной версии */
+.navbar {
+    background-color: rgba(1, 52, 1, 0.8) !important;
+    height: 70px;
+    padding: 20px 0;
+    font-weight: 400;
+}
+
+/* Увеличиваем отступы слева и справа для текста в меню */
+.navbar-nav .nav-link {
+    font-size: 16px;
+    color: white !important;
+    padding: 50px 30px;
+}
+@media (min-width: 950px) {
+    .navbar-nav {
+        margin-left: 150px; /* Увеличьте значение по вашему усмотрению */
+    }
+}
+
+/* Увеличиваем промежуток между номером телефона и соц сетями */
+.d-flex {
+    gap: 30px;
+}
+
+/* Для номера телефона */
+.phone-number {
+    font-size: 25px;
+    font-weight: 600;
+    color: white !important;
+    text-align: center;
+}
+
+/* Убираем серую рамку и фон в меню-бургере */
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+}
+
+/* Убираем рамку и тень при фокусе на кнопке-бургере */
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+@media (max-width: 950px) {
+    /* Настройка верхней полосы навбара (чёрный фон) */
+    .navbar {
+        background-color: #1f1f1fe6 !important;
+    }
+
+    /* Настройка секции с ссылками (полностью зеленый фон) */
+    .navbar-collapse {
+        background-color: #023202 !important;
+        width: 100% !important;
+        position: absolute;
+        top: 70px; /* Смещение меню под navbar */
+        left: 0;
+        height: 55vh; /* Полная высота экрана */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Смещаем ссылки наверх */
+        text-align: center;
+        opacity: 0; /* Начальное состояние */
+        visibility: hidden; /* Скрываем меню */
+        transform: translateY(-20px); /* Начальная позиция (выше на 20 пикселей) */
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Анимация */
+    }
+
+
+    .navbar-collapse.show {
+        opacity: 1; /* Прозрачность при открытии */
+        visibility: visible; /* Показываем меню */
+        transform: translateY(0); /* Сбрасываем позицию */
+    }
+
+    /* Гиперссылки в меню */
+    .navbar-nav .nav-link {
+        font-size: 16px;
+        color: white !important;
+        padding: 10px 0; /* Убираем лишние отступы */
+        width: 100%; /* Растягиваем элементы на всю ширину */
+        text-align: center; /* Выравнивание текста */
+        font-weight: 400; /* Уменьшаем жирность текста */
+    }
+
+    /* Настройка номера телефона и иконок соцсетей */
+    .d-flex {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Отступы для соц. иконок */
+    .social-icons {
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-icons img {
+        width: 35px; /* Увеличиваем размер иконок */
+        height: 35px;
+    }
+
+    .phone-number {
+        margin-top: 20px; /* Отступ сверху */
+        padding-top: 10px;
+    }
+
+    /* Центрирование содержимого меню на мобильных устройствах */
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрирование по горизонтали */
+        justify-content: flex-start; /* Смещение элементов наверх */
+        width: 100%;
+        padding-top: 20px; /* Добавляем отступ сверху для элементов меню */
+    }
+}
+
+@media (min-width: 500px) and (max-height: 500px) {
+    .navbar-collapse {
+        background-color: #023202 !important;
+        width: 100% !important;
+        position: fixed; /* Меняем на fixed, чтобы меню было фиксировано */
+        top: 70px;
+        left: 0;
+        height: 55vh; /* Задаем высоту 55vh */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; 
+        text-align: center;
+        opacity: 0; 
+        visibility: hidden; 
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    }
+
+    .navbar-collapse.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: row; /* Горизонтальное расположение */
+        justify-content: space-around; /* Равномерное распределение */
+        align-items: center;
+        gap: 5px; /* Горизонтальный отступ между ссылками */
+        padding: 10px 20px; /* Отступы внутри меню */
+        width: 100%;
+    }
+
+    /* Для телефона и иконок */
+    .phone-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px; /* Отступ между телефоном и иконками */
+        margin-top: 10px; /* Отступ от ссылок */
+        margin-top: -20px; /* Поднимаем выше на 10px */
+    }
+
+    /* Социальные иконки */
+    .social-icons {
+        display: flex;
+        gap: 10px; /* Отступы между иконками */
+        align-items: center; /* Центрируем иконки по вертикали */
+    }
+
+    .social-icons img {
+        width: 30px; /* Размер иконок */
+        height: 30px;
+    }
+
+    /* Телефон */
+    .phone-number {
+        font-size: 20px;
+        font-weight: 600;
+        color: white !important;
+        display: flex; /* Чтобы обеспечить флекс-контейнер для центрирования */
+        align-items: center; /* Вертикальное центрирование текста */
+    }
+}
+
+
+@media (max-width: 320px) and (max-height: 480px) {
+
+    /* Корректировка размеров иконок */
+    .social-icons img {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Корректировка шрифта телефона */
+    .phone-number {
+        font-size: 14px;
+    }
+
+    /* Поднимаем ссылки на страницы выше */
+    .navbar-nav {
+        padding-top: 10px; /* Уменьшаем отступ сверху */
+    }
+
+    .navbar-nav .nav-link {
+        padding-top: 5px; /* Уменьшаем отступы между ссылками */
+        padding-bottom: 5px;
+        font-size: 14px; /* Опционально: уменьшаем размер шрифта для ссылок */
+    }
+}
+
+
+
+/* Добавление отступа между элементами в Hero */
+.hero .display-4, .hero .lead, .hero .btn {
+    margin-bottom: 50px;
+}
+
+/* Стили для бегущей строки */
+.marquee-container {
+    background-color: #ff7000; /* Цвет фона */
+    color: #fff0d7; /* Цвет текста */
+    padding: 14px 0; /* Отступы */
+    overflow: hidden; /* Скрываем текст, выходящий за пределы контейнера */
+    white-space: nowrap; /* Запрещаем перенос строк */
+    position: relative; /* Для абсолютного позиционирования бегущей строки */
+    height: 65px; /* Высота контейнера */
+    margin-top: 70px !important; /* Смещаем бегущую строку ниже навбара */
+}
+
+/* Бегущая строка */
+.marquee {
+    display: inline-flex; /* Используем inline-flex для анимации */
+    animation: marquee 20s linear infinite; /* Устанавливаем длительность анимации */
+    position: absolute; /* Чтобы избежать пробелов */
+}
+
+/* Элементы бегущей строки */
+.marquee-item {
+    display: inline-flex; /* Для отображения элементов в одном ряду */
+    align-items: center; /* Центрируем по вертикали */
+    margin-right: 10px; /* Отступ между иконкой и текстом */
+    font-size: 22px; /* Увеличенный размер текста */
+}
+
+/* Иконка */
+.marquee-icon {
+    width: 25px; /* Ширина иконки */
+    height: 18px; /* Высота иконки */
+    margin-right: 5px; /* Отступ между иконкой и текстом */
+}
+
+/* Определяем анимацию для бегущей строки */
+@keyframes marquee {
+    0% {
+        transform: translateX(0); /* Начальная позиция */
+    }
+    100% {
+        transform: translateX(-50%); /* Двигаем текст на 50% ширины */
+    }
+}
+
+/* Сетка преимуществ */
+.advantages-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 0 10%;
+}
+
+/* Сетки преимуществ */
+.advantages-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 0 10%;
+}
+
+/* Карточки преимуществ */
+.advantage-item {
+    display: flex;
+    align-items: center; /* Центрируем содержимое карточки по высоте */
+    border-radius: 10px;
+    width: 30%; /* Ширина для каждой карточки */
+    text-align: left; /* Текст выравнивается по левому краю */
+    padding: 20px; /* Добавляем отступы внутри карточки */
+}
+
+/* Иконки в карточках */
+.advantage-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    flex-shrink: 0; /* Иконка сохраняет свои размеры */
+}
+
+/* Текст внутри карточек */
+.advantage-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрируем текст по высоте */
+    align-items: flex-start; /* Выравниваем по левому краю */
+    position: relative;
+    margin: 0; /* Убираем возможные отступы */
+}
+
+/* Заголовок в карточке */
+.advantage-text h3 {
+    font-size: 1.2rem;
+    margin: 0 0 10px 0; /* Отступ снизу для промежутка между заголовком и описанием */
+    color: black;
+}
+
+/* Описание в карточке */
+.advantage-text p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0; /* Убираем отступы */
+    position: relative;
+    text-align: left; /* Устанавливаем выравнивание текста по левому краю */
+}
+
+/* Первая строка описания */
+.advantage-text .line-1 {
+    display: inline-block;
+    position: relative;
+    left: var(--line-1-left, 0px); /* Используем переменную для сдвига первой строки */
+}
+
+/* Вторая строка описания */
+.advantage-text .line-2 {
+    display: inline-block;
+    position: relative;
+    left: var(--line-2-left, 0px); /* Используем переменную для сдвига второй строки */
+}
+
+
+
+/* Пространство внизу */
+.spacer {
+    height: 50px; /* Небольшое пространство под секцией */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 950px) {
+    .advantages-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .advantage-item {
+        width: 100%; /* Полная ширина на мобильных устройствах */
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Подвал */
+.footer {
+    width: 100%;
+}
+
+/* Оранжевая полоса */
+.footer-orange {
+    background-color: #ff823c;
+    height: 80px;
+    width: 100%;
+}
+
+/* Черная полоса */
+.footer-black {
+    background-color: black;
+    height: 60px;
+    width: 100%;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 950px) {
+    
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap:    10px;
+    margin-top: 20px;
+}
+
+}
+
+.contact-link {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.contact-icon {
+    width: 100px; /* Установили ширину */
+    height: 100px; /* Установили высоту */
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, margin-top 0.3s ease;
+    animation: bounce 2s infinite alternate;
+}
+
+.contact-text {
+    display: none; /* Текст отображается только при наведении */
+}
+
+.contact-link:hover {
+    color: #007bff; /* Цвет текста при наведении */
+}
+
+.contact-link:hover .contact-icon {
+    transform: scale(1.15); /* Увеличение иконки при наведении */
+    margin-top: 5px; /* Сдвиг вниз */
+}
+
+
+/* Анимация "покачивания" вверх-вниз */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-18px);
+    }
+}
+
+.description-text1 {
+    font-weight: bold; /* Делает текст жирным */
+    text-align: center; /* Центрирует текст */
+}
+

@@ -1,0 +1,536 @@
+/* Для текста в <h1> */
+h1.display-4 {
+    font-weight: 700;
+    font-size: 4rem; /* Увеличьте размер текста */
+}
+
+
+
+/* Полупрозрачный навбар для десктопной версии */
+.navbar {
+    background-color: rgba(1, 52, 1, 0.8) !important;
+    height: 70px;
+    padding: 20px 0;
+    font-weight: 400;
+}
+
+/* Увеличиваем отступы слева и справа для текста в меню */
+.navbar-nav .nav-link {
+    font-size: 16px;
+    color: white !important;
+    padding: 50px 30px;
+}
+@media (min-width: 950px) {
+    .navbar-nav {
+        margin-left: 150px; /* Увеличьте значение по вашему усмотрению */
+    }
+}
+
+/* Увеличиваем промежуток между номером телефона и соц сетями */
+.d-flex {
+    gap: 30px;
+}
+
+/* Для номера телефона */
+.phone-number {
+    font-size: 25px;
+    font-weight: 600;
+    color: white !important;
+    text-align: center;
+}
+
+/* Убираем серую рамку и фон в меню-бургере */
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+}
+
+/* Убираем рамку и тень при фокусе на кнопке-бургере */
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+@media (max-width: 950px) {
+    /* Настройка верхней полосы навбара (чёрный фон) */
+    .navbar {
+        background-color: #1f1f1fe6 !important;
+    }
+
+    /* Настройка секции с ссылками (полностью зеленый фон) */
+    .navbar-collapse {
+        background-color: #023202 !important;
+        width: 100% !important;
+        position: absolute;
+        top: 70px; /* Смещение меню под navbar */
+        left: 0;
+        height: 55vh; /* Полная высота экрана */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Смещаем ссылки наверх */
+        text-align: center;
+        opacity: 0; /* Начальное состояние */
+        visibility: hidden; /* Скрываем меню */
+        transform: translateY(-20px); /* Начальная позиция (выше на 20 пикселей) */
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Анимация */
+    }
+
+
+    .navbar-collapse.show {
+        opacity: 1; /* Прозрачность при открытии */
+        visibility: visible; /* Показываем меню */
+        transform: translateY(0); /* Сбрасываем позицию */
+    }
+
+    /* Гиперссылки в меню */
+    .navbar-nav .nav-link {
+        font-size: 16px;
+        color: white !important;
+        padding: 10px 0; /* Убираем лишние отступы */
+        width: 100%; /* Растягиваем элементы на всю ширину */
+        text-align: center; /* Выравнивание текста */
+        font-weight: 400; /* Уменьшаем жирность текста */
+    }
+
+    /* Настройка номера телефона и иконок соцсетей */
+    .d-flex {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Отступы для соц. иконок */
+    .social-icons {
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-icons img {
+        width: 35px; /* Увеличиваем размер иконок */
+        height: 35px;
+    }
+
+    .phone-number {
+        margin-top: 20px; /* Отступ сверху */
+        padding-top: 10px;
+    }
+
+    /* Центрирование содержимого меню на мобильных устройствах */
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрирование по горизонтали */
+        justify-content: flex-start; /* Смещение элементов наверх */
+        width: 100%;
+        padding-top: 20px; /* Добавляем отступ сверху для элементов меню */
+    }
+}
+
+@media (min-width: 500px) and (max-height: 500px) {
+    .navbar-collapse {
+        background-color: #023202 !important;
+        width: 100% !important;
+        position: fixed; /* Меняем на fixed, чтобы меню было фиксировано */
+        top: 70px;
+        left: 0;
+        height: 55vh; /* Задаем высоту 55vh */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; 
+        text-align: center;
+        opacity: 0; 
+        visibility: hidden; 
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    }
+
+    .navbar-collapse.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: row; /* Горизонтальное расположение */
+        justify-content: space-around; /* Равномерное распределение */
+        align-items: center;
+        gap: 5px; /* Горизонтальный отступ между ссылками */
+        padding: 10px 20px; /* Отступы внутри меню */
+        width: 100%;
+    }
+
+    /* Для телефона и иконок */
+    .phone-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px; /* Отступ между телефоном и иконками */
+        margin-top: 10px; /* Отступ от ссылок */
+        margin-top: -20px; /* Поднимаем выше на 10px */
+    }
+
+    /* Социальные иконки */
+    .social-icons {
+        display: flex;
+        gap: 10px; /* Отступы между иконками */
+        align-items: center; /* Центрируем иконки по вертикали */
+    }
+
+    .social-icons img {
+        width: 30px; /* Размер иконок */
+        height: 30px;
+    }
+
+    /* Телефон */
+    .phone-number {
+        font-size: 20px;
+        font-weight: 600;
+        color: white !important;
+        display: flex; /* Чтобы обеспечить флекс-контейнер для центрирования */
+        align-items: center; /* Вертикальное центрирование текста */
+    }
+}
+
+
+@media (max-width: 320px) and (max-height: 480px) {
+
+    /* Корректировка размеров иконок */
+    .social-icons img {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Корректировка шрифта телефона */
+    .phone-number {
+        font-size: 14px;
+    }
+
+    /* Поднимаем ссылки на страницы выше */
+    .navbar-nav {
+        padding-top: 10px; /* Уменьшаем отступ сверху */
+    }
+
+    .navbar-nav .nav-link {
+        padding-top: 5px; /* Уменьшаем отступы между ссылками */
+        padding-bottom: 5px;
+        font-size: 14px; /* Опционально: уменьшаем размер шрифта для ссылок */
+    }
+}
+
+
+/* Добавление отступа между элементами в Hero */
+.hero .display-4, .hero .lead, .hero .btn {
+    margin-bottom: 50px;
+}
+
+/* Стили для бегущей строки */
+.marquee-container {
+    background-color: #ff7000; /* Цвет фона */
+    color: #fff0d7; /* Цвет текста */
+    padding: 14px 0; /* Отступы */
+    overflow: hidden; /* Скрываем текст, выходящий за пределы контейнера */
+    white-space: nowrap; /* Запрещаем перенос строк */
+    position: relative; /* Для абсолютного позиционирования бегущей строки */
+    height: 65px; /* Высота контейнера */
+    margin-top: 70px !important; /* Смещаем бегущую строку ниже навбара */
+}
+
+/* Бегущая строка */
+.marquee {
+    display: inline-flex; /* Используем inline-flex для анимации */
+    animation: marquee 20s linear infinite; /* Устанавливаем длительность анимации */
+    position: absolute; /* Чтобы избежать пробелов */
+}
+
+/* Элементы бегущей строки */
+.marquee-item {
+    display: inline-flex; /* Для отображения элементов в одном ряду */
+    align-items: center; /* Центрируем по вертикали */
+    margin-right: 10px; /* Отступ между иконкой и текстом */
+    font-size: 22px; /* Увеличенный размер текста */
+}
+
+/* Иконка */
+.marquee-icon {
+    width: 25px; /* Ширина иконки */
+    height: 18px; /* Высота иконки */
+    margin-right: 5px; /* Отступ между иконкой и текстом */
+}
+
+/* Определяем анимацию для бегущей строки */
+@keyframes marquee {
+    0% {
+        transform: translateX(0); /* Начальная позиция */
+    }
+    100% {
+        transform: translateX(-50%); /* Двигаем текст на 50% ширины */
+    }
+}
+
+/* Стили для изображения в первой секции */
+.pomet-image {
+    width: 70vw; /* Ширина изображения будет составлять 70% от ширины окна */
+    height: 70vw; /* Высота изображения будет равна ширине */
+    border-radius: 20px; /* Закругленные углы */
+    object-fit: cover; /* Чтобы изображение не деформировалось */
+    margin: 0 auto !important; /* Центрируем изображение */
+}
+
+
+/* Анимация для слов "Мама" и "Папа" с подчеркиванием */
+.mama-underline, .papa-underline {
+    display: inline-block;
+    position: relative;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.mama-underline::after, .papa-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+
+
+
+/* Общие стили для секции с котятами */
+.kittens-section {
+    background-color: #b1f0a4;
+    padding: 50px 0;
+}
+
+.kittens-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Карточка котенка */
+.kitten-card {
+    display: flex;
+    background-color: #ffffff00;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0);
+    border-radius: 8px;
+    padding: 0px;
+    margin-bottom: 30px; /* Уменьшим этот отступ в мобильной версии */
+    align-items: center; /* Вертикальное выравнивание */
+    width: 100%; /* Единый размер карточки */
+    height: 100%; /* Единый размер карточки */
+    border-radius: 20px; /* Закругленные углы */
+}
+
+/* Изображение котенка */
+.kitten-image {
+    max-width: 100%; /* Максимальная ширина изображения */
+    margin-right: 20px; /* Отступ справа для первой и третьей карточек */
+}
+
+.kitten-image img {
+    width: 700px;
+    height: 450px;
+    border-radius: 20px;
+}
+
+/* Информация о котенке */
+.kitten-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    margin-left: 25px; /* Подвинуть текст ближе к изображению */
+}
+
+.kitten-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.kitten-price {
+    font-size: 1.5rem; /* Размер остается прежним */
+    margin-bottom: 15px;
+}
+
+.buy-button {
+    background-color: #ff5429;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500; /* Установлено умеренное начертание текста */
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    width: 180px; /* Убираем фиксированную ширину */
+    height: 50px;
+    /* отсутствие подчерка ссылки */
+    text-decoration: none; 
+    /* Центрирование текста */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap; /* Запрет на перенос текста для кнопки "Купить котят" */
+}
+
+
+
+.buy-button:hover {
+    background-color: #a7371bdf; /* Цвет при наведении */
+}
+
+.buy-button:active {
+    background-color: #8f3015; /* Затемненный цвет при нажатии */
+    transform: scale(0.95); /* Немного уменьшаем размер для эффекта нажатия */
+}
+
+.kitten-description {
+    font-size: 1.5rem; /* Размер остается прежним */
+    font-weight: 300;  /* Тонкий шрифт для описания */
+    margin-bottom: 15px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 950px) {
+    .kitten-card {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        height: auto;
+        margin-bottom: -60px; /* Уменьшаем отступ между карточками */
+    }
+
+    .kitten-image img {
+        width: 100%; /* Уменьшаем изображение до 80% на мобильных устройствах */
+        height: auto;
+        order: 0;  /* Изображение остается на первом месте */
+    }
+
+    .kitten-info {
+        align-items: flex-start;
+        margin-left: 0;
+        order: 1;  /* Этот стиль смещает информацию ниже изображения */
+    }
+
+    .kitten-title {
+        font-size: 1.7rem;
+    }
+
+    .kitten-price {
+        font-size: 1.5rem;
+    }
+
+    .buy-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .kitten-description {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+/* Подвал */
+.footer {
+    width: 100%;
+}
+
+/* Оранжевая полоса */
+.footer-orange {
+    background-color: #ff823c;
+    height: 80px;
+    width: 100%;
+}
+
+/* Черная полоса */
+.footer-black {
+    background-color: black;
+    height: 60px;
+    width: 100%;
+}
+
+.slideshow {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    font-size: 24px;
+    color: rgba(128, 128, 128, 0.7); /* Полупрозрачный серый */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    color: rgba(128, 128, 128, 1); /* Полностью непрозрачный серый при наведении */
+}
+
+
+.icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px; /* Отступ между иконкой и текстом */
+    vertical-align: middle; /* Выравнивание иконки по центру текста */
+}
+
+.kitten-description {
+    display: flex;
+    align-items: center;
+}
+
+.kitten-price {
+    display: flex;
+    align-items: center;
+}
+
+
+.kitten-status .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.status-sold {
+    background-color: rgba(255, 1, 1, 0.46);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    margin-left: 10px; /* Сдвиг текста "Продано" левее */
+    display: inline-block;
+    text-indent: 5px; /* Интервал перед словом */
+}
+
+.status-available {
+    background-color: rgba(1, 110, 1, 0.63);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    margin-left: 10px; /* Сдвиг текста "Продано" левее */
+    display: inline-block;
+    text-indent: 5px; /* Интервал перед словом */
+}

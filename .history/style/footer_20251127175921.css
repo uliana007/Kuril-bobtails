@@ -1,0 +1,137 @@
+/* ====================== FOOTER ====================== */
+.site-footer {
+    margin-top: 100px;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.footer-top-strip {
+    height: 12px;
+    background: linear-gradient(to right, #ff823c 0%, #ff5e0a 100%);
+}
+
+.footer-bottom-strip {
+    height: 8px;
+    background: #ff823c;
+}
+
+/* Основной контейнер */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px 40px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Левая часть — логотип */
+.footer-logo {
+    margin-bottom: 20px;
+}
+.logo-text {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #ff823c;
+    text-transform: uppercase;
+}
+.footer-subtitle {
+    font-size: 16px;
+    opacity: 0.9;
+    margin: 8px 0;
+}
+.footer-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 12px 0 0;
+    line-height: 1.2;
+}
+
+/* Заголовки в футере */
+.footer-heading {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #ff823c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Списки */
+.footer-contacts,
+.footer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-contacts li,
+.footer-nav li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.footer-contacts a,
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-contacts a:hover,
+.footer-nav a:hover {
+    color: #ff823c;
+}
+
+/* Правая часть */
+.footer-copyright {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+.footer-made {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* ====================== АДАПТИВНОСТЬ ====================== */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer-right {
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        text-align: center;
+    }
+    .logo-text {
+        font-size: 30px;
+    }
+    .footer-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 40px 15px 30px;
+    }
+    .logo-text {
+        font-size: 26px;
+    }
+}
